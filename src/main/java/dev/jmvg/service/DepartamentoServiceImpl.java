@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class DepartamentoServiceImpl implements DepartamentoService {
 
     private DepartamentoDao dao;
@@ -24,23 +25,31 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 
     @Override
     public void editar(Departamento departamento) {
-
+        dao.update(departamento);
     }
 
     @Override
     public void excluir(Long id) {
-
+        dao.delete(id);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Departamento buscarPorId(Long id) {
-        return null;
+        return dao.findById(id);
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Departamento> buscarTodos() {
-        return null;
+        return dao.findAll();
+    }
+
+    @Override
+    public boolean departamentoTemCargo(Long id) {
+        if(buscarPorId(id).getCargos().isEmpty()){
+            return false;
+        }
+        return true;
     }
 }

@@ -24,4 +24,11 @@ public class Departamento extends AbstractEntity<Long> {
         this.nome = nome;
     }
 
+    public List<Cargo> getCargos() {
+        return cargos;
+    }
+
+    public void setCargos(List<Cargo> cargos) {
+        this.cargos = cargos;
+    }
 }
