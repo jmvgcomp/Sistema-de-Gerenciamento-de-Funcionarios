@@ -1,4 +1,4 @@
-package dev.jmvg.controller;
+package dev.jmvg.web.controller;
 
 import dev.jmvg.model.Departamento;
 import dev.jmvg.service.DepartamentoService;
