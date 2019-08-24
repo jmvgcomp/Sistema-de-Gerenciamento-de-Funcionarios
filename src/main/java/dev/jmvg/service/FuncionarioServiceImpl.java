@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class FuncionarioServiceImpl implements FuncionarioService {
 
     private FuncionarioDao dao;
