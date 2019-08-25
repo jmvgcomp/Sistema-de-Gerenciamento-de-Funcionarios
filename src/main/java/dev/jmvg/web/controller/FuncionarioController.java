@@ -64,6 +64,12 @@ public class FuncionarioController {
         return "redirect:/funcionarios/listar";
     }
 
+    @GetMapping("/buscar/nome")
+    public String getNome(@RequestParam("nome") String nome, ModelMap model){
+        model.addAttribute("funcionarios", funcionarioService.buscarPorNome(nome));
+        return "/funcionario/lista";
+    }
+
 
     @ModelAttribute("cargos")
     public List<Cargo> getCargos(){
