@@ -17,4 +17,9 @@ public class FuncionarioDaoImpl extends AbstractDao<Funcionario, Long> implement
          */
         return createQuery("select f from Funcionario f where f.nome like concat('%',?1,'%') ", nome);
     }
+
+    @Override
+    public List<Funcionario> findByCargoId(Long id) {
+        return createQuery("select f from Funcionario f where f.cargo.id = ?1", id);
+    }
 }
