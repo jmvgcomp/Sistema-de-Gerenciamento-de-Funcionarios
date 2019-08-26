@@ -2,6 +2,7 @@ package dev.jmvg.service;
 
 import dev.jmvg.model.Funcionario;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface FuncionarioService {
@@ -15,4 +16,6 @@ public interface FuncionarioService {
     List<Funcionario> buscarPorNome(String nome);
 
     List<Funcionario> buscarPorcargo(Long id);
+
+    List<Funcionario> buscarPordata(LocalDate entrada, LocalDate saida);
 }

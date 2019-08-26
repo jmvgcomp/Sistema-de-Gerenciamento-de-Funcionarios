@@ -6,11 +6,13 @@ import dev.jmvg.model.UF;
 import dev.jmvg.service.CargoService;
 import dev.jmvg.service.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -73,6 +75,13 @@ public class FuncionarioController {
     @GetMapping("/buscar/cargo")
     public String getCargo(@RequestParam("id") Long id, ModelMap model){
         model.addAttribute("funcionarios", funcionarioService.buscarPorcargo(id));
+        return "/funcionario/lista";
+    }
+
+    @GetMapping("/buscar/data")
+    public String getData(@RequestParam("entrada") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate entrada,
+                          @RequestParam("saida") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate saida, ModelMap model){
+        model.addAttribute("funcionarios", funcionarioService.buscarPordata(entrada, saida));
         return "/funcionario/lista";
     }
 
