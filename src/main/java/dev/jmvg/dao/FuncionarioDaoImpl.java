@@ -3,7 +3,7 @@ package dev.jmvg.dao;
 import dev.jmvg.model.Funcionario;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.TypedQuery;
+//import javax.persistence.TypedQuery;
 import java.time.LocalDate;
 import java.util.List;
 
