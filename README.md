@@ -1,4 +1,5 @@
-# Sistema Simples de Gerenciamento de Funcionários
+# ![Sistema Simples de Gerenciamento de Funcionários](https://gerenciador-funcionario.herokuapp.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ![apresentacao](https://media.giphy.com/media/UUtvUhw0IfX3W861b6/giphy.gif)
 
@@ -21,7 +22,3 @@ spring.datasource.password=[senha]
 
 ## Contribuindo
 Pull Requests são bem-vindos. O intuito é melhorar e aprender cada vez mais, fique à vontade para abrir issues e vamos discutir mudanças!
-
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
